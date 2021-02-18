@@ -17,9 +17,8 @@ export class AppService {
     try {
       console.log('Opening the browser......');
       browser = await Puppeteer.launch({
-        headless: false,
-        defaultViewport: null,
-        args: ['--disable-setuid-sandbox'],
+        headless: true,
+        args: ['--no-sandbox'],
       });
     } catch (err) {
       console.log('Could not create a browser instance => : ', err);
